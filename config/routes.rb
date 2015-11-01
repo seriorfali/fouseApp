@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'login' => 'sessions#new'
+
+  delete 'logout' => 'sessions#destroy'
+
+  post 'login' => 'sessions#create'
 
   resources :users, :developers, :fousegroups
 
