@@ -1,0 +1,13 @@
+<div id="login_form">
+  <%= form_for :session, url: login_path do |f| %>
+    <%= f.text_field :username, placeholder: "username" %>
+    <%= f.label :fouser %>
+    <%= f.radio_button :type %>
+    <%= f.label :developer %>
+    <%= f.radio_button :type %>
+    <%= f.email_field :email, placeholder: "email" %>
+    <%= f.password_field :password, placeholder: "password" %>
+    <%= f.submit "Login" %>
+    <%= f.submit "Join" %>
+  <% end %>
+</div>
