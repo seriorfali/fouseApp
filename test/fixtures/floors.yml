@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  gross_area: 1
+  livable_area: 1
+
+two:
+  number: 1
+  gross_area: 1
+  livable_area: 1
