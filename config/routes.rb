@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'fousegroups#index'
+
   get 'login' => 'sessions#new'
 
   delete 'logout' => 'sessions#destroy'

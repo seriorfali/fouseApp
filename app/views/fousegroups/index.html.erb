@@ -1,2 +1,3 @@
-<h1>Fousegroups#index</h1>
-<p>Find me in app/views/fousegroups/index.html.erb</p>
+<% if !params[:sessions][:member_id] do %>
+  <%= render 'partials/login' %>
+<% end %>
