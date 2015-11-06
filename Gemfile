@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.0"
+ruby "2.2.1"
 # Shim to load environment variables from .env into ENV in development
 gem 'dotenv-rails', :groups => [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

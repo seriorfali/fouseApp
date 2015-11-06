@@ -16,15 +16,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[fouser_params])
+    @user = User.new(params[user_params])
 
-    respond_to do |format|
-      if @user.save
-        redirect_to user_path(@user)
-      else
-        format.html
-        format.json
-      end
+    if @user.save
+      redirect_to @user
+    else
+      render :new
     end
   end
 
@@ -49,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:login).permit(:username, :password, :email, :phone, :account_type, :first_name, :last_name, :name)
+    params.require(:login).permit(:username, :password, :email, :phone, :account_type, :first_name, :last_name, :name, :neighborhood_ids)
   end
 
 end
