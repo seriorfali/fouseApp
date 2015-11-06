@@ -28,6 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Amazon Ruby SDK for interacting with S3
 gem 'aws-sdk', '~> 2'
 
+# Social sharing buttons
+gem 'social-share-button', '~> 0.1.6'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

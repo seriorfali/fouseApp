@@ -11,11 +11,12 @@
 <body>
   <header>
     <% if current_user %>
-      <%= link_to 'Logout', logout_path, method: :delete %>
+      <%= render 'partials/header' %>
     <% end %>
   </header>
 
-<%= yield %>
+  <%= yield %>
 
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

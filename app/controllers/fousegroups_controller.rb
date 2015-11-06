@@ -2,7 +2,11 @@ class FousegroupsController < ApplicationController
   before_action :set_fousegroup, only: [:show, :edit, :update, :destroy]
 
   def index
-    @top_fousegroups = Fousegroup.all.order(:popularity).first(20)
+    if !!current_user
+      redirect_to current_user
+    else
+      @top_fousegroups = Fousegroup.all.order(:popularity).first(20)
+    end
   end
 
   def show

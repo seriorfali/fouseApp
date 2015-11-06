@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'fuildings/index'
+
+  get 'fuildings/show'
+
+  get 'fuildings/edit'
+
+  get 'fouses/index'
+
+  get 'fouses/show'
+
+  get 'fouses/edit'
+
   get 'static_pages/about'
 
   get 'static_pages/help'

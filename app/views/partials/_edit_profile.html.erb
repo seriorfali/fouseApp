@@ -1,0 +1,10 @@
+<%= form_for current_user, url: edit_user_path(current_user) do |f| %>
+  <%= f.text_field :name, placeholder: current_user.name %>
+  <%= f.text_field :first_name, placeholder: current_user.first_name %>
+  <%= f.text_field :last_name, placeholder: current_user.last_name %>
+  <%= f.label :addresses %>
+  <%= f.collection_select :neighborhood_ids, Neighborhood.all, :id, :name, {:multiple => true} %>
+  <%= f.email_field :email, placeholder: current_user.email %>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.submit "Save edits" %>
+<% end %>

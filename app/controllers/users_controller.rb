@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
+
     respond_to do |format|
       format.js
     end
@@ -26,13 +28,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
+    @user.update(user_params)
+
+    redirect_to @user
   end
 
   def destroy
     @user.destroy
+
+    redirect_to root_path
   end
 
   private
@@ -46,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:login).permit(:username, :password, :email, :phone, :account_type, :first_name, :last_name, :name, :neighborhood_ids)
+    params.permit(:username, :password, :email, :phone, :account_type, :first_name, :last_name, :name, :neighborhood_ids)
   end
 
 end

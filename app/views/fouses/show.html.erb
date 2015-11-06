@@ -1,0 +1,6 @@
+<h1><%= @fouse.name %></h1>
+<h2>Fousegroup: <%= link_to @fousegroup.name @fousegroup %></h2>
+<h2>Fuilding: <%= @fouse.fuilding.name %></h2>
+<p><%= @fouse.user.first_name @fouse.user.last_name %></p>
+
+<%= social_share_button_tag(@fouse.name) %>
