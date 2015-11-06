@@ -37,6 +37,9 @@ gem 'aws-sdk', '~> 2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Shim to load environment variables from .env into ENV in development
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -47,4 +50,5 @@ group :development do
   gem 'spring'
 
 end
+
 gem 'rails_12factor', group: :production
