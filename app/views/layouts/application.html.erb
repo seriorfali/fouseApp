@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   <title>FouseApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <% if current_user %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+    <% end %>
+  </header>
 
 <%= yield %>
 

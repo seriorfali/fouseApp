@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
+  name: MyString
   number_of_rooms: 1
   number_of_bathrooms: 1
   area: 1
 
 two:
-  name: MyText
+  name: MyString
   number_of_rooms: 1
   number_of_bathrooms: 1
   area: 1

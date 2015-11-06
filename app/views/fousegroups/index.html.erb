@@ -1,3 +1,18 @@
-<% if !params[:sessions][:member_id] do %>
-  <%= render 'partials/login' %>
+<% if current_user %>
+  <%= link_to 'Design a fousegroup', new_fousegroup_path %>
+<% else %>
+  <div id="login_button">
+    <%= link_to "Login", login_path, :remote => true %>
+  </div>
+  <div id="login_form"></div>
+  <div id="signup_button">
+    <%= link_to "Join", new_user_path, :remote => true %>
+  </div>
+  <div id="signup_form"></div>
+<% end %>
+
+<% @top_fousegroups.each do |fousegroup| %>
+  <div class="fg_thumbnail">
+    <p><%= link_to fousegroup.name, fousegroup %></p>
+    <p><%= fousegroup.neighborhood %></p>
 <% end %>

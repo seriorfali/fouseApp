@@ -1,34 +1,23 @@
 class SessionsController < ApplicationController
   def new
+    respond_to do |format|
+      format.js
+    end
   end
 
-  def start_for_existing
-    @user = User.find_by(username: params[:session][:username])
-    @developer = Developer.find_by(username: params[:session][:username])
-    if @user && @user.authenticate(params[:session][:password])
-      session[:member_id] = @user.id.to_s
-    elsif @developer && @developer.authenticate(params[:session][:password])
-      session[:member_id] = @developer.id.to_s
-    elsif params[:session][:type] == "Fouser"
-      RedirectToAction("Add", "Users")
-    elsif params[:session][:type] == "Developer"
-      RedirectToAction("Add", "Developers")
+  def create
+    @user = User.find_by(username: params[:login][:username])
+    if @user && @user.authenticate(params[:login][:password])
+      session[:user_id] = @user.id.to_s
+      redirect_to root_path
     else
       redirect_to login_path
-  end
-
-  def start_for_new
-    if params[session_type_params] == "Fouser"
-      session[:member_id] = @user.id.to_s
-    elsif params[session_type_params] == "Developer"
-      session[:member_id] = @developer.id.to_s
+    end
   end
 
   def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 
-  private
-  def session_type_params
-    params.require(:session).permit(:type)
-  end
 end

@@ -1,4 +1,4 @@
 class Floor < ActiveRecord::Base
-  belongs_to :fuilding
   has_many :fouses
+  belongs_to :fuilding
 end

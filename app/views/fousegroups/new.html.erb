@@ -1,0 +1,24 @@
+<%= form_for @fousegroup do |f| %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <p>Type</p>
+  <%= f.label :villa %>
+  <%= f.radio_button :community_type, "villa" %>
+  <%= f.label :townhouse %>
+  <%= f.radio_button :community_type, "townhouse" %>
+  <%= f.label :tower %>
+  <%= f.radio_button :community_type, "tower" %>
+  <p>Style</p>
+  <%= f.label :neo_futurist, "Neo-futurist" %>
+  <%= f.radio_button :style, "neo_futurist" %>
+  <%= f.label :postmodern %>
+  <%= f.radio_button :style, "postmodern" %>
+  <%= f.label :international %>
+  <%= f.radio_button :style, "international" %>
+  <%= f.label :new_classical %>
+  <%= f.radio_button :style, "new_classical" %>
+  <%= f.label :art_deco %>
+  <%= f.radio_button :style, "art_deco" %>
+  <%= f.label :ranch %>
+  <%= f.radio_button :style, "ranch" %>
+  <%= f.submit "Debut fousegroup" %>
+<% end %>

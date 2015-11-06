@@ -2,14 +2,12 @@
 
 one:
   name: MyString
-  floor_count: 1
-  lot_area: 1
   gross_area: 1
+  lot_area: 1
   livable_area: 1
 
 two:
   name: MyString
-  floor_count: 1
-  lot_area: 1
   gross_area: 1
+  lot_area: 1
   livable_area: 1
